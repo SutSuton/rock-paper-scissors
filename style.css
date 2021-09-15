@@ -1,0 +1,57 @@
+body {
+    background-color: rgb(36, 36, 36);
+}
+h1 {
+    color: lightgrey;
+    text-align: center;
+}
+.choice-container {
+    font-size: 20px;
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+    grid-template-rows: 30px 200px 30px;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    color: lightgrey;
+}
+.choice-item {
+    border-radius: 5px;
+    text-align: center;
+}
+.choose {
+    grid-column: 1 / 4;
+}
+.declaration {
+    grid-column: 1 / 4;
+}
+.rock:hover {
+    box-shadow: 0px 0px 5px 5px red;
+    transition: 100ms;
+}
+.paper:hover {
+    box-shadow: 0px 0px 5px 5px green;
+    transition: 100ms;
+}
+.scissors:hover {
+    box-shadow: 0px 0px 5px 5px blue;
+    transition: 100ms;
+}
+.results-container {
+    display: grid;
+    grid-template-columns: 150px 150px;
+    grid-template-rows: 30px 30px 150px;
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+}
+.results-item {
+    background-color: grey;
+    border-radius: 5px;
+    text-align: center;
+}
+.score {
+    grid-column: 1 / 3;
+}
+button {
+    border: none;
+    background-color: transparent;
+}

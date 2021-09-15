@@ -11,18 +11,22 @@ function computerPlay() {
 
 const rock = document.querySelector("#rock")
 rock.addEventListener("click", () => {
-    alert(playRound("rock",computerPlay()));
+    alert('You clicked me!');
+//    results.append(playRound("rock",computerPlay()));
 });
 
 const paper = document.querySelector("#paper")
 paper.addEventListener("click", () => {
-    alert(playRound("paper",computerPlay()));
+    results.append(playRound("paper",computerPlay()));
 });
 
 const scissors = document.querySelector("#scissors")
 scissors.addEventListener("click", () => {
-    alert(playRound("scissors",computerPlay()));
+    results.append(playRound("scissors",computerPlay()));
 });
+
+const results = document.body;
+
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {

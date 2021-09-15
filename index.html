@@ -3,17 +3,26 @@
 <head>
     <meta charset="UTF-8"/>
     <script src="js-file.js" defer></script>
+    <link rel="stylesheet" href="style.css">
     <h1>Rock, Paper, Scissors</h1>
 </head>
 <body>
-    <h2>Choose your weapon</h2>
-    <button id="rock" type="button">Rock</button>
-    <button id="paper" type="button">Paper</button>
-    <button id="scissors" type="button">Scissors</button>
-
-    <div id="results">
-
+    <div class="choice-container">
+        <div class="choice-item choose">Choose your weapon:</div>
+        <div class="choice-item rock">
+            <button type=button id="rock"><img id="rock-img" src="rock.png"></button>
+        </div>
+        <div class="choice-item paper"><img src="paper.png"></div>
+        <div class="choice-item scissors"><img src="scissors.png"></div>
+        <div class="choice-item declaration">YOU WIN/YOU LOSE</div>
     </div>
 
+    <div class="results-container">
+        <div class="results-item score">Score</div>
+        <div class="results-item you">YOU</div>
+        <div class="results-item computer">COMPUTER</div>
+        <div class="results-item your-score">3</div>
+        <div class="results-item computer-score">4</div>
+    </div>
 </body>
 </html>
