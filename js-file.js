@@ -9,54 +9,64 @@ function computerPlay() {
     }
 }
 
+function playRound(playerSelection, computerSelection) {
+    if (playerSelection === computerSelection) {
+        return ["The round is drawn!", 0, 0];
+    } else if (playerSelection === "rock") {
+        if (computerSelection === "paper") {
+            return ["You lose! Paper beats rock.", 0, 1];
+        } else { 
+            return ["You win! Rock beats scissors.", 1, 0];
+        }
+    } else if (playerSelection === "paper") {
+        if (computerSelection === "rock") {
+            return ["You win! Paper beats rock.", 1, 0];
+        } else {
+            return ["You lose! Scissors beats paper.", 0, 1];
+        }
+    } else if (playerSelection === "scissors") {
+        if (computerSelection === "rock") {
+            return ["You lose! Rock beats scissors.", 0, 1];
+        } else {
+            return ["You win! Scissors beats paper.", 1, 0];
+        }
+    }
+}
+
+let playerScoreNumber = 0;
+let computerScoreNumber = 0;
+const declaration = document.querySelector(".declaration");
+const playerScore = document.querySelector(".your-score");
+const computerScore = document.querySelector(".computer-score");
+playerScore.textContent = playerScoreNumber;
+computerScore.textContent = computerScoreNumber;
+
+function addText([string, a, b]) {
+    playerScoreNumber += a;
+    computerScoreNumber += b;
+    declaration.textContent = string;
+    playerScore.textContent = playerScoreNumber;
+    computerScore.textContent = computerScoreNumber;
+}
+
+
 const rock = document.querySelector("#rock")
 rock.addEventListener("click", () => {
-    alert('You clicked me!');
-//    results.append(playRound("rock",computerPlay()));
+    addText(playRound('rock', computerPlay()));
 });
 
 const paper = document.querySelector("#paper")
 paper.addEventListener("click", () => {
-    results.append(playRound("paper",computerPlay()));
+    addText(playRound('paper', computerPlay()));
 });
 
 const scissors = document.querySelector("#scissors")
 scissors.addEventListener("click", () => {
-    results.append(playRound("scissors",computerPlay()));
+    addText(playRound('scissors', computerPlay()));
 });
 
-const results = document.body;
 
 
-function playRound(playerSelection, computerSelection) {
-    if (playerSelection === computerSelection) {
-        return ["The round is drawn!", 0.5];
-    } else if (playerSelection === "rock") {
-        if (computerSelection === "paper") {
-            return ["You lose! Paper beats rock.", 0];
-        } else { 
-            return ["You win! Rock beats scissors.", 1];
-        }
-    } else if (playerSelection === "paper") {
-        if (computerSelection === "rock") {
-            return ["You win! Paper beats rock.", 1];
-        } else {
-            return ["You lose! Scissors beats paper.", 0];
-        }
-    } else if (playerSelection === "scissors") {
-        if (computerSelection === "rock") {
-            return ["You lose! Rock beats scissors.", 0];
-        } else {
-            return ["You win! Scissors beats paper.", 1];
-        }
-    }  else if (playerSelection === null) {
-            return ["Too bad, you lose.", 0];
-    }  else if (playerSelection === "69") {
-            return ["nice.", 69];
-    }  else {
-            return ["Invalid response, round is drawn.", 0.5];
-    }
-} 
 /*     
 function game() {
     let ps1 = prompt("Round 1: Rock, paper, or scissors?", '').toLowerCase();
