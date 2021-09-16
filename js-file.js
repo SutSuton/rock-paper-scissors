@@ -49,7 +49,6 @@ function addText([string, a, b]) {
     computerScore.textContent = computerScoreNumber;
 }
 
-
 const rock = document.querySelector("#rock")
 rock.addEventListener("click", () => {
     addText(playRound('rock', computerPlay()));
@@ -64,7 +63,6 @@ const scissors = document.querySelector("#scissors")
 scissors.addEventListener("click", () => {
     addText(playRound('scissors', computerPlay()));
 });
-
 
 
 /*     
